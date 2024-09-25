@@ -1,0 +1,18 @@
+# ninja log v6
+0	192	7489376869676394	build.ninja	63729a8083123219
+1	350	7487260001199857	CMakeFiles/NopeEngine.dir/NopeEngine.cpp.obj	7292f7d065d9a62c
+5	655	7488867496929211	Engine/CMakeFiles/NOPEEngine.dir/NOPEEngine/Core/Application.cpp.obj	9a296e4b0fca526c
+368	762	7488867721008279	Game/Game.exe	86bf862344cfc962
+351	457	7487260004702842	NopeEngine.exe	aa6ccdb258805ffa
+656	825	7488867503432499	Engine/libNOPEEngine.a	e0af140e9ab77f2
+4	368	7488867717359500	Game/CMakeFiles/Game.dir/Source/Game.cpp.obj	ca193cd3159eab55
+5	1160	7489377638867306	Engine/CMakeFiles/NOPEEngine.dir/cmake_pch.hxx.gch	476d08910eea8be4
+12	1173	7489377638932165	Game/CMakeFiles/Game.dir/cmake_pch.hxx.gch	aa954ffbe09d4996
+1174	1507	7489377650555479	Game/CMakeFiles/Game.dir/Source/Game.cpp.obj	14137bf8288eaca0
+1161	8288	7489377650424634	Engine/CMakeFiles/NOPEEngine.dir/NOPEEngine/Core/Application.cpp.obj	5fbe99238b52673a
+8289	18224	7489377721714552	Engine/libNOPEEngine.a	e0af140e9ab77f2
+18224	30150	7489377821062962	Game/Game.exe	870f29cf1788b0e6
+12	5774	7489594313486198	Game/CMakeFiles/Game.dir/Source/Game.cpp.obj	14137bf8288eaca0
+5	5251	7489594948092785	Engine/CMakeFiles/NOPEEngine.dir/NOPEEngine/Core/Application.cpp.obj	5fbe99238b52673a
+10	5274	7489594948132655	Game/CMakeFiles/Game.dir/Source/Game.cpp.obj	14137bf8288eaca0
+5	5599	7489595043399795	Engine/libNOPEEngine.a	e0af140e9ab77f2
