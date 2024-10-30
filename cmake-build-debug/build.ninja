@@ -63,6 +63,48 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
 # D:/Learning/GameEngine/NopeEngine/CMakeLists.txt
@@ -75,23 +117,47 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Order-only phony target for NOPEEngine
 
-build cmake_object_order_depends_target_NOPEEngine: phony || .
+build cmake_object_order_depends_target_NOPEEngine: phony || cmake_object_order_depends_target_glfw
 
 build Engine/CMakeFiles/NOPEEngine.dir/cmake_pch.hxx.gch: CXX_COMPILER__NOPEEngine_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/cmake-build-debug/Engine/CMakeFiles/NOPEEngine.dir/cmake_pch.hxx.cxx | Engine/CMakeFiles/NOPEEngine.dir/cmake_pch.hxx || cmake_object_order_depends_target_NOPEEngine
-  DEFINES = -DDYNAMIC_BUILD=0 -DDYNAMIC_LIB=0
+  DEFINES = -DDYNAMIC_BUILD=0 -DDYNAMIC_LIB=0 -DON_NOPE_ENGINE
   DEP_FILE = Engine\CMakeFiles\NOPEEngine.dir\cmake_pch.hxx.gch.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -Winvalid-pch -x c++-header -include D:/Learning/GameEngine/NopeEngine/cmake-build-debug/Engine/CMakeFiles/NOPEEngine.dir/cmake_pch.hxx
-  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Engine/NOPEEngine -ID:/Learning/GameEngine/NopeEngine/Vendors/include
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Engine/NOPEEngine -ID:/Learning/GameEngine/NopeEngine/Vendors/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include
   OBJECT_DIR = Engine\CMakeFiles\NOPEEngine.dir
   OBJECT_FILE_DIR = Engine\CMakeFiles\NOPEEngine.dir
 
 build Engine/CMakeFiles/NOPEEngine.dir/NOPEEngine/Core/Application.cpp.obj: CXX_COMPILER__NOPEEngine_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Engine/NOPEEngine/Core/Application.cpp | Engine/CMakeFiles/NOPEEngine.dir/cmake_pch.hxx Engine/CMakeFiles/NOPEEngine.dir/cmake_pch.hxx.gch || cmake_object_order_depends_target_NOPEEngine
-  DEFINES = -DDYNAMIC_BUILD=0 -DDYNAMIC_LIB=0
+  DEFINES = -DDYNAMIC_BUILD=0 -DDYNAMIC_LIB=0 -DON_NOPE_ENGINE
   DEP_FILE = Engine\CMakeFiles\NOPEEngine.dir\NOPEEngine\Core\Application.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -Winvalid-pch -include D:/Learning/GameEngine/NopeEngine/cmake-build-debug/Engine/CMakeFiles/NOPEEngine.dir/cmake_pch.hxx
-  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Engine/NOPEEngine -ID:/Learning/GameEngine/NopeEngine/Vendors/include
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Engine/NOPEEngine -ID:/Learning/GameEngine/NopeEngine/Vendors/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include
   OBJECT_DIR = Engine\CMakeFiles\NOPEEngine.dir
   OBJECT_FILE_DIR = Engine\CMakeFiles\NOPEEngine.dir\NOPEEngine\Core
+
+build Engine/CMakeFiles/NOPEEngine.dir/NOPEEngine/Core/Logger/Logger.cpp.obj: CXX_COMPILER__NOPEEngine_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Engine/NOPEEngine/Core/Logger/Logger.cpp | Engine/CMakeFiles/NOPEEngine.dir/cmake_pch.hxx Engine/CMakeFiles/NOPEEngine.dir/cmake_pch.hxx.gch || cmake_object_order_depends_target_NOPEEngine
+  DEFINES = -DDYNAMIC_BUILD=0 -DDYNAMIC_LIB=0 -DON_NOPE_ENGINE
+  DEP_FILE = Engine\CMakeFiles\NOPEEngine.dir\NOPEEngine\Core\Logger\Logger.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -Winvalid-pch -include D:/Learning/GameEngine/NopeEngine/cmake-build-debug/Engine/CMakeFiles/NOPEEngine.dir/cmake_pch.hxx
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Engine/NOPEEngine -ID:/Learning/GameEngine/NopeEngine/Vendors/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include
+  OBJECT_DIR = Engine\CMakeFiles\NOPEEngine.dir
+  OBJECT_FILE_DIR = Engine\CMakeFiles\NOPEEngine.dir\NOPEEngine\Core\Logger
+
+build Engine/CMakeFiles/NOPEEngine.dir/NOPEEngine/Window/GLFWPlatformWindow.cpp.obj: CXX_COMPILER__NOPEEngine_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Engine/NOPEEngine/Window/GLFWPlatformWindow.cpp | Engine/CMakeFiles/NOPEEngine.dir/cmake_pch.hxx Engine/CMakeFiles/NOPEEngine.dir/cmake_pch.hxx.gch || cmake_object_order_depends_target_NOPEEngine
+  DEFINES = -DDYNAMIC_BUILD=0 -DDYNAMIC_LIB=0 -DON_NOPE_ENGINE
+  DEP_FILE = Engine\CMakeFiles\NOPEEngine.dir\NOPEEngine\Window\GLFWPlatformWindow.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -Winvalid-pch -include D:/Learning/GameEngine/NopeEngine/cmake-build-debug/Engine/CMakeFiles/NOPEEngine.dir/cmake_pch.hxx
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Engine/NOPEEngine -ID:/Learning/GameEngine/NopeEngine/Vendors/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include
+  OBJECT_DIR = Engine\CMakeFiles\NOPEEngine.dir
+  OBJECT_FILE_DIR = Engine\CMakeFiles\NOPEEngine.dir\NOPEEngine\Window
+
+build Engine/CMakeFiles/NOPEEngine.dir/NOPEEngine/Window/WindowPlatform.cpp.obj: CXX_COMPILER__NOPEEngine_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Engine/NOPEEngine/Window/WindowPlatform.cpp | Engine/CMakeFiles/NOPEEngine.dir/cmake_pch.hxx Engine/CMakeFiles/NOPEEngine.dir/cmake_pch.hxx.gch || cmake_object_order_depends_target_NOPEEngine
+  DEFINES = -DDYNAMIC_BUILD=0 -DDYNAMIC_LIB=0 -DON_NOPE_ENGINE
+  DEP_FILE = Engine\CMakeFiles\NOPEEngine.dir\NOPEEngine\Window\WindowPlatform.cpp.obj.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -Winvalid-pch -include D:/Learning/GameEngine/NopeEngine/cmake-build-debug/Engine/CMakeFiles/NOPEEngine.dir/cmake_pch.hxx
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Engine/NOPEEngine -ID:/Learning/GameEngine/NopeEngine/Vendors/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include
+  OBJECT_DIR = Engine\CMakeFiles\NOPEEngine.dir
+  OBJECT_FILE_DIR = Engine\CMakeFiles\NOPEEngine.dir\NOPEEngine\Window
 
 
 # =============================================================================
@@ -101,7 +167,7 @@ build Engine/CMakeFiles/NOPEEngine.dir/NOPEEngine/Core/Application.cpp.obj: CXX_
 #############################################
 # Link the static library Engine\libNOPEEngine.a
 
-build Engine/libNOPEEngine.a: CXX_STATIC_LIBRARY_LINKER__NOPEEngine_Debug Engine/CMakeFiles/NOPEEngine.dir/NOPEEngine/Core/Application.cpp.obj
+build Engine/libNOPEEngine.a: CXX_STATIC_LIBRARY_LINKER__NOPEEngine_Debug Engine/CMakeFiles/NOPEEngine.dir/NOPEEngine/Core/Application.cpp.obj Engine/CMakeFiles/NOPEEngine.dir/NOPEEngine/Core/Logger/Logger.cpp.obj Engine/CMakeFiles/NOPEEngine.dir/NOPEEngine/Window/GLFWPlatformWindow.cpp.obj Engine/CMakeFiles/NOPEEngine.dir/NOPEEngine/Window/WindowPlatform.cpp.obj || Vendors/glfw/src/libglfw3.a
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = Engine\CMakeFiles\NOPEEngine.dir
   POST_BUILD = cd .
@@ -132,6 +198,48 @@ build Engine/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build Engine/rebuild_cache: phony Engine/CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build Engine/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Engine/CMakeFiles/install.util: CUSTOM_COMMAND Engine/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Engine && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Engine/install: phony Engine/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Engine/CMakeFiles/install/local.util: CUSTOM_COMMAND Engine/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Engine && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Engine/install/local: phony Engine/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build Engine/CMakeFiles/install/strip.util: CUSTOM_COMMAND Engine/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Engine && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build Engine/install/strip: phony Engine/CMakeFiles/install/strip.util
+
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
 # D:/Learning/GameEngine/NopeEngine/CMakeLists.txt
@@ -144,21 +252,21 @@ build Engine/rebuild_cache: phony Engine/CMakeFiles/rebuild_cache.util
 #############################################
 # Order-only phony target for Game
 
-build cmake_object_order_depends_target_Game: phony || cmake_object_order_depends_target_NOPEEngine
+build cmake_object_order_depends_target_Game: phony || cmake_object_order_depends_target_NOPEEngine cmake_object_order_depends_target_glfw
 
 build Game/CMakeFiles/Game.dir/cmake_pch.hxx.gch: CXX_COMPILER__Game_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/cmake-build-debug/Game/CMakeFiles/Game.dir/cmake_pch.hxx.cxx | Game/CMakeFiles/Game.dir/cmake_pch.hxx || cmake_object_order_depends_target_Game
-  DEFINES = -DDYNAMIC_BUILD=0 -DDYNAMIC_LIB=0
+  DEFINES = -DDYNAMIC_BUILD=0 -DDYNAMIC_LIB=0 -DON_NOPE_ENGINE
   DEP_FILE = Game\CMakeFiles\Game.dir\cmake_pch.hxx.gch.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -Winvalid-pch -x c++-header -include D:/Learning/GameEngine/NopeEngine/cmake-build-debug/Game/CMakeFiles/Game.dir/cmake_pch.hxx
-  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Game/Source -ID:/Learning/GameEngine/NopeEngine/Engine -ID:/Learning/GameEngine/NopeEngine/Engine/NOPEEngine -ID:/Learning/GameEngine/NopeEngine/Vendors/include
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Game/Source -ID:/Learning/GameEngine/NopeEngine/Engine -ID:/Learning/GameEngine/NopeEngine/Engine/NOPEEngine -ID:/Learning/GameEngine/NopeEngine/Vendors/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include
   OBJECT_DIR = Game\CMakeFiles\Game.dir
   OBJECT_FILE_DIR = Game\CMakeFiles\Game.dir
 
 build Game/CMakeFiles/Game.dir/Source/Game.cpp.obj: CXX_COMPILER__Game_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Game/Source/Game.cpp | Game/CMakeFiles/Game.dir/cmake_pch.hxx Game/CMakeFiles/Game.dir/cmake_pch.hxx.gch || cmake_object_order_depends_target_Game
-  DEFINES = -DDYNAMIC_BUILD=0 -DDYNAMIC_LIB=0
+  DEFINES = -DDYNAMIC_BUILD=0 -DDYNAMIC_LIB=0 -DON_NOPE_ENGINE
   DEP_FILE = Game\CMakeFiles\Game.dir\Source\Game.cpp.obj.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always -Winvalid-pch -include D:/Learning/GameEngine/NopeEngine/cmake-build-debug/Game/CMakeFiles/Game.dir/cmake_pch.hxx
-  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Game/Source -ID:/Learning/GameEngine/NopeEngine/Engine -ID:/Learning/GameEngine/NopeEngine/Engine/NOPEEngine -ID:/Learning/GameEngine/NopeEngine/Vendors/include
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Game/Source -ID:/Learning/GameEngine/NopeEngine/Engine -ID:/Learning/GameEngine/NopeEngine/Engine/NOPEEngine -ID:/Learning/GameEngine/NopeEngine/Vendors/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include
   OBJECT_DIR = Game\CMakeFiles\Game.dir
   OBJECT_FILE_DIR = Game\CMakeFiles\Game.dir\Source
 
@@ -170,9 +278,9 @@ build Game/CMakeFiles/Game.dir/Source/Game.cpp.obj: CXX_COMPILER__Game_unscanned
 #############################################
 # Link the executable Game\Game.exe
 
-build Game/Game.exe: CXX_EXECUTABLE_LINKER__Game_Debug Game/CMakeFiles/Game.dir/Source/Game.cpp.obj | Engine/libNOPEEngine.a || Engine/libNOPEEngine.a
+build Game/Game.exe: CXX_EXECUTABLE_LINKER__Game_Debug Game/CMakeFiles/Game.dir/Source/Game.cpp.obj | Engine/libNOPEEngine.a Vendors/glfw/src/libglfw3.a || Engine/libNOPEEngine.a Vendors/glfw/src/libglfw3.a
   FLAGS = -g
-  LINK_LIBRARIES = Engine/libNOPEEngine.a  -lspdlogd  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = Engine/libNOPEEngine.a  -lspdlogd  Vendors/glfw/src/libglfw3.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LD:/Learning/GameEngine/NopeEngine/Vendors/bin
   OBJECT_DIR = Game\CMakeFiles\Game.dir
   POST_BUILD = cd .
@@ -204,6 +312,478 @@ build Game/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build Game/rebuild_cache: phony Game/CMakeFiles/rebuild_cache.util
 
+
+#############################################
+# Utility command for list_install_components
+
+build Game/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Game/CMakeFiles/install.util: CUSTOM_COMMAND Game/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Game && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Game/install: phony Game/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Game/CMakeFiles/install/local.util: CUSTOM_COMMAND Game/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Game && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Game/install/local: phony Game/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build Game/CMakeFiles/install/strip.util: CUSTOM_COMMAND Game/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Game && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build Game/install/strip: phony Game/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# D:/Learning/GameEngine/NopeEngine/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for uninstall
+
+build Vendors/glfw/uninstall: phony Vendors/glfw/CMakeFiles/uninstall
+
+
+#############################################
+# Utility command for edit_cache
+
+build Vendors/glfw/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Vendors\glfw && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Vendors/glfw/edit_cache: phony Vendors/glfw/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Vendors/glfw/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Vendors\glfw && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SD:\Learning\GameEngine\NopeEngine -BD:\Learning\GameEngine\NopeEngine\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Vendors/glfw/rebuild_cache: phony Vendors/glfw/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build Vendors/glfw/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Vendors/glfw/CMakeFiles/install.util: CUSTOM_COMMAND Vendors/glfw/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Vendors\glfw && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Vendors/glfw/install: phony Vendors/glfw/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Vendors/glfw/CMakeFiles/install/local.util: CUSTOM_COMMAND Vendors/glfw/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Vendors\glfw && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Vendors/glfw/install/local: phony Vendors/glfw/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build Vendors/glfw/CMakeFiles/install/strip.util: CUSTOM_COMMAND Vendors/glfw/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Vendors\glfw && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build Vendors/glfw/install/strip: phony Vendors/glfw/CMakeFiles/install/strip.util
+
+
+#############################################
+# Custom command for Vendors\glfw\CMakeFiles\uninstall
+
+build Vendors/glfw/CMakeFiles/uninstall | ${cmake_ninja_workdir}Vendors/glfw/CMakeFiles/uninstall: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Vendors\glfw && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -P D:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/cmake_uninstall.cmake"
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# D:/Learning/GameEngine/NopeEngine/Vendors/glfw/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target glfw
+
+
+#############################################
+# Order-only phony target for glfw
+
+build cmake_object_order_depends_target_glfw: phony || .
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/context.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\context.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/init.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/init.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\init.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/input.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/input.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\input.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/monitor.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/monitor.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\monitor.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/platform.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/platform.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\platform.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/vulkan.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/vulkan.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\vulkan.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/window.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/window.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\window.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/egl_context.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/egl_context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\egl_context.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/osmesa_context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\osmesa_context.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/null_init.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/null_init.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\null_init.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/null_monitor.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\null_monitor.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/null_window.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/null_window.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\null_window.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/null_joystick.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\null_joystick.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/win32_module.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/win32_module.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\win32_module.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/win32_time.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/win32_time.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\win32_time.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/win32_thread.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/win32_thread.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\win32_thread.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/win32_init.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/win32_init.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\win32_init.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/win32_joystick.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/win32_joystick.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\win32_joystick.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/win32_monitor.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/win32_monitor.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\win32_monitor.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/win32_window.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/win32_window.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\win32_window.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+build Vendors/glfw/src/CMakeFiles/glfw.dir/wgl_context.c.obj: C_COMPILER__glfw_unscanned_Debug D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/wgl_context.c || cmake_object_order_depends_target_glfw
+  DEFINES = -DUNICODE -DWINVER=0x0501 -D_GLFW_WIN32 -D_UNICODE
+  DEP_FILE = Vendors\glfw\src\CMakeFiles\glfw.dir\wgl_context.c.obj.d
+  FLAGS = -g -std=c99 -fdiagnostics-color=always -Wall
+  INCLUDES = -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/include -ID:/Learning/GameEngine/NopeEngine/Vendors/glfw/src -ID:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  OBJECT_FILE_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target glfw
+
+
+#############################################
+# Link the static library Vendors\glfw\src\libglfw3.a
+
+build Vendors/glfw/src/libglfw3.a: C_STATIC_LIBRARY_LINKER__glfw_Debug Vendors/glfw/src/CMakeFiles/glfw.dir/context.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/init.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/input.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/monitor.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/platform.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/vulkan.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/window.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/egl_context.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/null_init.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/null_window.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/win32_module.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/win32_time.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/win32_thread.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/win32_init.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/win32_joystick.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/win32_monitor.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/win32_window.c.obj Vendors/glfw/src/CMakeFiles/glfw.dir/wgl_context.c.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = Vendors\glfw\src\CMakeFiles\glfw.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = Vendors\glfw\src\libglfw3.a
+  TARGET_PDB = glfw3.a.dbg
+
+
+#############################################
+# Utility command for update_mappings
+
+build Vendors/glfw/src/update_mappings: phony Vendors/glfw/src/CMakeFiles/update_mappings
+
+
+#############################################
+# Utility command for edit_cache
+
+build Vendors/glfw/src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Vendors\glfw\src && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Vendors/glfw/src/edit_cache: phony Vendors/glfw/src/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Vendors/glfw/src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Vendors\glfw\src && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SD:\Learning\GameEngine\NopeEngine -BD:\Learning\GameEngine\NopeEngine\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Vendors/glfw/src/rebuild_cache: phony Vendors/glfw/src/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build Vendors/glfw/src/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Vendors/glfw/src/CMakeFiles/install.util: CUSTOM_COMMAND Vendors/glfw/src/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Vendors\glfw\src && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Vendors/glfw/src/install: phony Vendors/glfw/src/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Vendors/glfw/src/CMakeFiles/install/local.util: CUSTOM_COMMAND Vendors/glfw/src/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Vendors\glfw\src && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Vendors/glfw/src/install/local: phony Vendors/glfw/src/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build Vendors/glfw/src/CMakeFiles/install/strip.util: CUSTOM_COMMAND Vendors/glfw/src/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Vendors\glfw\src && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build Vendors/glfw/src/install/strip: phony Vendors/glfw/src/CMakeFiles/install/strip.util
+
+
+#############################################
+# Custom command for Vendors\glfw\src\CMakeFiles\update_mappings
+
+build Vendors/glfw/src/CMakeFiles/update_mappings | ${cmake_ninja_workdir}Vendors/glfw/src/CMakeFiles/update_mappings: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\Vendors\glfw\src && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -P D:/Learning/GameEngine/NopeEngine/Vendors/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h"
+  DESC = Updating gamepad mappings from upstream repository
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# D:/Learning/GameEngine/NopeEngine/Vendors/glfw/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build Vendors/glfw/docs/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Vendors\glfw\docs && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build Vendors/glfw/docs/edit_cache: phony Vendors/glfw/docs/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build Vendors/glfw/docs/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Vendors\glfw\docs && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SD:\Learning\GameEngine\NopeEngine -BD:\Learning\GameEngine\NopeEngine\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build Vendors/glfw/docs/rebuild_cache: phony Vendors/glfw/docs/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build Vendors/glfw/docs/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build Vendors/glfw/docs/CMakeFiles/install.util: CUSTOM_COMMAND Vendors/glfw/docs/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Vendors\glfw\docs && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -P cmake_install.cmake"
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build Vendors/glfw/docs/install: phony Vendors/glfw/docs/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build Vendors/glfw/docs/CMakeFiles/install/local.util: CUSTOM_COMMAND Vendors/glfw/docs/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Vendors\glfw\docs && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake"
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build Vendors/glfw/docs/install/local: phony Vendors/glfw/docs/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build Vendors/glfw/docs/CMakeFiles/install/strip.util: CUSTOM_COMMAND Vendors/glfw/docs/all
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\Learning\GameEngine\NopeEngine\cmake-build-debug\Vendors\glfw\docs && "D:\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake"
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build Vendors/glfw/docs/install/strip: phony Vendors/glfw/docs/CMakeFiles/install/strip.util
+
 # =============================================================================
 # Target aliases.
 
@@ -213,7 +793,15 @@ build Game.exe: phony Game/Game.exe
 
 build NOPEEngine: phony Engine/libNOPEEngine.a
 
+build glfw: phony Vendors/glfw/src/libglfw3.a
+
 build libNOPEEngine.a: phony Engine/libNOPEEngine.a
+
+build libglfw3.a: phony Vendors/glfw/src/libglfw3.a
+
+build uninstall: phony Vendors/glfw/uninstall
+
+build update_mappings: phony Vendors/glfw/src/update_mappings
 
 # =============================================================================
 # Folder targets.
@@ -223,7 +811,7 @@ build libNOPEEngine.a: phony Engine/libNOPEEngine.a
 #############################################
 # Folder: D:/Learning/GameEngine/NopeEngine/cmake-build-debug
 
-build all: phony Engine/all Game/all
+build all: phony Engine/all Game/all Vendors/glfw/all
 
 # =============================================================================
 
@@ -240,20 +828,41 @@ build Engine/all: phony Engine/libNOPEEngine.a
 build Game/all: phony Game/Game.exe
 
 # =============================================================================
+
+#############################################
+# Folder: D:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw
+
+build Vendors/glfw/all: phony Vendors/glfw/src/all Vendors/glfw/docs/all
+
+# =============================================================================
+
+#############################################
+# Folder: D:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/docs
+
+build Vendors/glfw/docs/all: phony
+
+# =============================================================================
+
+#############################################
+# Folder: D:/Learning/GameEngine/NopeEngine/cmake-build-debug/Vendors/glfw/src
+
+build Vendors/glfw/src/all: phony Vendors/glfw/src/libglfw3.a
+
+# =============================================================================
 # Built-in targets
 
 
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | CMakeCache.txt CMakeFiles/3.29.6/CMakeCCompiler.cmake CMakeFiles/3.29.6/CMakeCXXCompiler.cmake CMakeFiles/3.29.6/CMakeRCCompiler.cmake CMakeFiles/3.29.6/CMakeSystem.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeRCInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-C.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX-ABI.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake D$:/Learning/GameEngine/NopeEngine/CMakeLists.txt D$:/Learning/GameEngine/NopeEngine/Engine/CMakeLists.txt D$:/Learning/GameEngine/NopeEngine/Game/CMakeLists.txt
+build build.ninja: RERUN_CMAKE | CMakeCache.txt CMakeFiles/3.29.6/CMakeCCompiler.cmake CMakeFiles/3.29.6/CMakeCXXCompiler.cmake CMakeFiles/3.29.6/CMakeRCCompiler.cmake CMakeFiles/3.29.6/CMakeSystem.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/BasicConfigVersion-SameMajorVersion.cmake.in D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeDependentOption.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakePackageConfigHelpers.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeRCInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CheckCSourceCompiles.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CheckIncludeFile.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CheckLibraryExists.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-C.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/FindDoxygen.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/FindPackageMessage.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/FindThreads.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/GNUInstallDirs.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX-ABI.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/WriteBasicConfigVersionFile.cmake D$:/Learning/GameEngine/NopeEngine/CMakeLists.txt D$:/Learning/GameEngine/NopeEngine/Engine/CMakeLists.txt D$:/Learning/GameEngine/NopeEngine/Game/CMakeLists.txt D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/CMakeLists.txt D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/CMake/cmake_uninstall.cmake.in D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/CMake/glfw3.pc.in D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/CMake/glfw3Config.cmake.in D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/docs/CMakeLists.txt D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build CMakeCache.txt CMakeFiles/3.29.6/CMakeCCompiler.cmake CMakeFiles/3.29.6/CMakeCXXCompiler.cmake CMakeFiles/3.29.6/CMakeRCCompiler.cmake CMakeFiles/3.29.6/CMakeSystem.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeRCInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-C.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX-ABI.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake D$:/Learning/GameEngine/NopeEngine/CMakeLists.txt D$:/Learning/GameEngine/NopeEngine/Engine/CMakeLists.txt D$:/Learning/GameEngine/NopeEngine/Game/CMakeLists.txt: phony
+build CMakeCache.txt CMakeFiles/3.29.6/CMakeCCompiler.cmake CMakeFiles/3.29.6/CMakeCXXCompiler.cmake CMakeFiles/3.29.6/CMakeRCCompiler.cmake CMakeFiles/3.29.6/CMakeSystem.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/BasicConfigVersion-SameMajorVersion.cmake.in D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCXXInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeDependentOption.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeGenericSystem.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakePackageConfigHelpers.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeRCInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CheckCSourceCompiles.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CheckIncludeFile.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/CheckLibraryExists.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-C.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Compiler/GNU.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/FindDoxygen.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/FindPackageMessage.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/FindThreads.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/GNUInstallDirs.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-C.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX-ABI.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU-CXX.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-GNU.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows-windres.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/Windows.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake D$:/CLion$ 2024.2.2/bin/cmake/win/x64/share/cmake-3.29/Modules/WriteBasicConfigVersionFile.cmake D$:/Learning/GameEngine/NopeEngine/CMakeLists.txt D$:/Learning/GameEngine/NopeEngine/Engine/CMakeLists.txt D$:/Learning/GameEngine/NopeEngine/Game/CMakeLists.txt D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/CMakeLists.txt D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/CMake/cmake_uninstall.cmake.in D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/CMake/glfw3.pc.in D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/CMake/glfw3Config.cmake.in D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/docs/CMakeLists.txt D$:/Learning/GameEngine/NopeEngine/Vendors/glfw/src/CMakeLists.txt: phony
 
 
 #############################################

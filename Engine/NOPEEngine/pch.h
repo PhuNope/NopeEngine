@@ -82,3 +82,6 @@ template<typename T> using Unique = std::unique_ptr<T>;
 #endif // defined(__clang__) || defined(__gcc__)
 
 #define NOPE_FREE_MEMORY(memory) if(memory != nullptr){ delete memory; memory = nullptr; }
+
+#define BIND_EVENT_FUNCTION(function)[this](auto&... args) -> decltype(auto)\
+	{ return this->function(std::forward<decltype(args)>(args)...);}
